@@ -6,7 +6,9 @@ const bodyParser = require('body-parser');  // Import the body-parser middleware
 const app = express();  // Create an instance of the Express server
 const port = 3000;  // Set the server port to listen on
 app.use(bodyParser.json());
-
+// handling both JSON data and URL-encoded data in the request bodies
+app.use(bodyParser.json());  // Parse incoming JSON data
+app.use(bodyParser.urlencoded({ extended: false }));  // Parse incoming URL-encoded data
 // Step 2/3: Create a connection pool/ Define an async function to handle database operations
 // Create a new connection pool with the database credentials from the environment variables
 const DatabaseOperations = require('./dbQuery');
@@ -30,7 +32,5 @@ app.post('/sum', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-// handling both JSON data and URL-encoded data in the request bodies
-app.use(bodyParser.json());  // Parse incoming JSON data
-app.use(bodyParser.urlencoded({ extended: false }));  // Parse incoming URL-encoded data
+
 
