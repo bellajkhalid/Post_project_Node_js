@@ -9,22 +9,22 @@ const {dataPost,dataGet} = require('../db_Floder/dbQuery');
  *     Data_test:
  *       type: object
  *       required:
- *         - title
- *         - author
+ *         - a
+ *         - b
  *       properties:
  *         id:
- *           type: string
+ *           type: number
  *           description: The auto-generated id of the Data_test
- *         title:
- *           type: string
- *           description: The Data_test title
- *         author:
- *           type: string
- *           description: The Data_test author
+ *         var a:
+ *           type: number
+ *           description: The Data_test var a
+ *         var b:
+ *           type: number
+ *           description: The Data_test var b
  *       example:
- *         id: d5fE_asz
- *         title: The New Turing Omnibus
- *         author: Alexander K. Dewdney
+ *         id: 2
+ *         a: 11
+ *         b: 121
  */
 
  /**
@@ -34,7 +34,7 @@ const {dataPost,dataGet} = require('../db_Floder/dbQuery');
   *   description: The Data_tests managing API
   */
 
-// Define route to perform calculation
+// Define Post endpoint
 /**
  * @swagger
  * /dbRoute:
